@@ -1,0 +1,20 @@
+$mainColor: #1f1f1f;
+$fontSize: 20px;
+$fontFamily: "Barlow Condensed", Arial, Helvetica, sans-serif;
+
+@mixin flexbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+@mixin generalspace ($width, $ptb, $prl, $color) {
+    width: $width;
+    padding: $ptb $prl;
+    color: $color;
+}
+
+%align {
+    text-align: center;
+    font-size: $fontSize;
+}
