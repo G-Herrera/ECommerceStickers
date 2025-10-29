@@ -1,3 +1,20 @@
+body .myAside .aside__button, body .cart .cart__button, body .products .products__button {
+  width: 100%;
+  padding: 10px 0px;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 35px;
+  box-sizing: border-box;
+  box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.5);
+  border-color: #f76ea6;
+  background-color: #f76ea6;
+}
+
+body .myAside .aside__button:hover, body .cart .cart__button:hover, body .products .products__button:hover {
+  background-color: #e70b67;
+  transform: scale(1.05);
+}
+
 body .cart .cart__name, body .banner {
   text-align: center;
   font-size: 20px;
@@ -14,7 +31,7 @@ body {
 }
 body .header {
   width: 100%;
-  padding: 20px 0px;
+  padding: 20px 10px;
   color: #1f1f1f;
   display: flex;
   justify-content: space-between;
@@ -29,6 +46,21 @@ body .header .header__icon {
 }
 body .header .header__logo {
   width: 100px;
+}
+body .header .header__cart {
+  position: relative;
+  display: inline-block;
+}
+body .header .header__cartBadge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: rgb(145, 2, 2);
+  color: #fff;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  padding: 4px 7px;
+  display: none;
 }
 body .banner {
   width: 100%;
@@ -75,6 +107,19 @@ body .products .products__price {
   font-weight: 300;
   font-size: 15px;
 }
+body .products .products__price.red {
+  color: #e70b67;
+  font-weight: 600;
+}
+body .products .products__price.blue {
+  color: #0b58e7;
+  font-weight: 600;
+}
+body .products .products__button {
+  width: 60%;
+  box-shadow: none;
+  margin-bottom: 20px;
+}
 body .cart {
   width: 500px;
   padding: 25px 25px;
@@ -86,6 +131,10 @@ body .cart {
   right: -100%;
   top: 100px;
   box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+body .cart.show {
+  right: 0;
 }
 body .cart .cart__name {
   width: 100%;
@@ -112,7 +161,55 @@ body .cart .cart__icon {
   width: 25px;
   cursor: pointer;
 }
-
+body .myAside {
+  width: 500px;
+  padding: 25px 25px;
+  color: #1f1f1f;
+  background-color: #fff;
+  box-sizing: border-box;
+  height: 100%;
+  position: fixed;
+  left: -100%;
+  top: 100px;
+  box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.3);
+  transition: all 0.35s ease;
+}
+body .myAside.showAside {
+  left: 0;
+}
+body .myAside .aside__name {
+  width: 100%;
+  padding: 5px 0px;
+  color: #1f1f1f;
+  text-align: left;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+body .myAside .aside__closeIcon {
+  width: 25px;
+  cursor: pointer;
+}
+body .myAside .aside__closeIcon:hover {
+  transform: scale(1.5);
+}
+body .myAside .aside__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1 solid #f76ea6;
+  padding: 20px;
+  box-sizing: border-box;
+}
+body .myAside .aside__img {
+  width: 60px;
+}
+body .myAside .aside__price {
+  font-weight: 500;
+}
+body .myAside .aside__removeIcon {
+  width: 25px;
+  cursor: pointer;
+}
 @media (max-width: 820px) {
   .header {
     padding: 15px;

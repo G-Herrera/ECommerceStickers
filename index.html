@@ -7,18 +7,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <script src="./js/functions.js" defer></script> <!--Aqui se linkea el archivo de javascript. Con el atributo defer hacemos que cargue el doc antes de que ejecute el código de java-->
     <title>Tienda stickers</title>
 </head>
 <body>
     <header class="header">
             <i><img class="header__icon" src="img/Icono menu.png" alt="Icono menu"></i>
-            <img class="header__logo" src="img/Logo empresa.png" alt="Logo de empresa">
-            <i><img class="header__icon" src="img/Icono carrito.png" alt="Icono de carrito"></i>
+            <img class="header__logo" src="img/LogoEmpresa.png" alt="Logo de empresa">
+            <div class="header__cart">
+                <i>
+                    <img class="header__icon" src="img/Icono carrito.png" alt="Icono de carrito">
+                </i>
+                <span class="header__cartBadge">0</span>
+            </div>
+            
     </header>
 
     <main>
         <section class="banner">
-            <h2 class="banner__title">¡Nuevos Productos!</h2>
+            <h2 class="banner__title" id="txt">¡Nuevos Productos!</h2>
             <p class="banner__text">Explora nuestros productos recientemente agregados</p>
         </section>
 
@@ -27,80 +34,121 @@
                 <img class="products__img" src="img/Astronauta.jpg" alt="Astronauta">
                 <h3 class="products__title">Astronauta</h3>
                 <p class="products__price">$5.00</p>
+                <button class="products__button">Agregar al carrito</button>
             </article>
 
             <article class="products__item">
                 <img class="products__img" src="img/Alien.jpg" alt="Alien">
                 <h3 class="products__title">Alienigena</h3>
                 <p class="products__price">$5.00</p>
+                <button class="products__button">Agregar al carrito</button>
             </article>
 
             <article class="products__item">
                 <img class="products__img" src="img/gato.jpg" alt="gato">
                 <h3 class="products__title">Gato extrovertido</h3>
                 <p class="products__price">$5.00</p>
+                <button class="products__button">Agregar al carrito</button>
             </article>
 
             <article class="products__item">
                 <img class="products__img" src="img/Astronauta.jpg" alt="Astronauta">
                 <h3 class="products__title">Astronauta</h3>
                 <p class="products__price">$5.00</p>
+                <button class="products__button">Agregar al carrito</button>
             </article>
 
             <article class="products__item">
                 <img class="products__img" src="img/Alien.jpg" alt="Alien">
                 <h3 class="products__title">Alienigena</h3>
                 <p class="products__price">$5.00</p>
+                <button class="products__button">Agregar al carrito</button>
             </article>
 
             <article class="products__item">
                 <img class="products__img" src="img/gato.jpg" alt="gato">
                 <h3 class="products__title">Gato extrovertido</h3>
                 <p class="products__price">$5.00</p>
+                <button class="products__button">Agregar al carrito</button>
             </article>
 
             <article class="products__item">
                 <img class="products__img" src="img/Astronauta.jpg" alt="Astronauta">
                 <h3 class="products__title">Astronauta</h3>
                 <p class="products__price">$5.00</p>
+                <button class="products__button">Agregar al carrito</button>
             </article>
 
             <article class="products__item">
                 <img class="products__img" src="img/Alien.jpg" alt="Alien">
                 <h3 class="products__title">Alienigena</h3>
                 <p class="products__price">$5.00</p>
+                <button class="products__button">Agregar al carrito</button>
             </article>
 
             <article class="products__item">
                 <img class="products__img" src="img/gato.jpg" alt="gato">
                 <h3 class="products__title">Gato extrovertido</h3>
                 <p class="products__price">$5.00</p>
+                <button class="products__button">Agregar al carrito</button>
             </article>
         </section>
 
         <section class="cart">
             <h2 class="cart__name">TÚ CARRITO</h2>
-            <div class="cart__item">
-                <img class="cart__img" src="img/Astronauta.jpg" alt="Astronauta">
-                <p class="cart__title">Astronauta</p>
-                <p class="cart__price">$5.00</p>
-                <i><img class="cart__icon" src="img/Icono quitar.png" alt="Icono quitar"></i>
-            </div>
+            <div class="cart__items">
+                <div class="cart__item">
+                    <img class="cart__img" src="img/Astronauta.jpg" alt="Astronauta">
+                    <p class="cart__title" id="titleTxt">Astronauta</p>
+                    <p class="cart__price">$5.00</p>
+                    <i class="remove"><img class="cart__icon" src="img/Icono quitar.png" alt="Icono quitar"></i>
+                </div>
 
-            <div class="cart__item">
-                <img class="cart__img" src="img/Astronauta.jpg" alt="Astronauta">
-                <p class="cart__title">Astronauta</p>
-                <p class="cart__price">$5.00</p>
-                <i><img class="cart__icon" src="img/Icono quitar.png" alt="Icono quitar"></i>
-            </div>
+                <div class="cart__item">
+                    <img class="cart__img" src="img/Astronauta.jpg" alt="Astronauta">
+                    <p class="cart__title">Astronauta</p>
+                    <p class="cart__price">$5.00</p>
+                    <i class="remove"><img class="cart__icon" src="img/Icono quitar.png" alt="Icono quitar"></i>
+                </div>
 
-            <div class="cart__item">
-                <img class="cart__img" src="img/Astronauta.jpg" alt="Astronauta">
-                <p class="cart__title">Astronauta</p>
-                <p class="cart__price">$5.00</p>
-                <i><img class="cart__icon" src="img/Icono quitar.png" alt="Icono quitar"></i>
+                <div class="cart__item">
+                    <img class="cart__img" src="img/Astronauta.jpg" alt="Astronauta">
+                    <p class="cart__title">Astronauta</p>
+                    <p class="cart__price">$5.00</p>
+                    <i class="remove"><img class="cart__icon" src="img/Icono quitar.png" alt="Icono quitar"></i>
+                </div>
             </div>
+            <button class="cart__button">Pagar</button>
         </section>
+        
+        <aside class="myAside">
+            <div class="aside__item">
+                <h2 class="aside__name">APARTADO IZQUIERDO!</h2>
+                <img class="aside__closeIcon" src="./img/crossIcon.png" alt="closeAsideIcon" id="closeAsideIcon">
+            </div>
+            
+            <div class="aside__item">
+                <img class="aside__img" src="img/Alien.jpg" alt="Alien">
+                <p class="aside__title">Alien</p>
+                <p class="aside__price">$5.00</p>
+                <i class="remove"><img class="aside__removeIcon" src="img/Icono quitar.png"></i>
+            </div>
+
+            <div class="aside__item">
+                <img class="aside__img" src="img/Alien.jpg" alt="Alien">
+                <p class="aside__title">Alien</p>
+                <p class="aside__price">$5.00</p>
+                <i class="remove"><img class="aside__removeIcon" src="img/Icono quitar.png"></i>
+            </div>
+
+            <div class="aside__item">
+                <img class="aside__img" src="img/Alien.jpg" alt="Alien">
+                <p class="aside__title">Alien</p>
+                <p class="aside__price">$5.00</p>
+                <i class="remove"><img class="aside__removeIcon" src="img/Icono quitar.png"></i>
+            </div>
+            <button class="aside__button">Pagar</button>
+        </aside>
     </main>
 
     <footer></footer>
