@@ -1,4 +1,4 @@
-body .myAside .aside__button, body .cart .cart__button, body .products .products__button {
+body .myAside .myAside__button, body .cart .cart__button, body .products .products__button {
   width: 100%;
   padding: 10px 0px;
   color: #fff;
@@ -10,7 +10,7 @@ body .myAside .aside__button, body .cart .cart__button, body .products .products
   background-color: #f76ea6;
 }
 
-body .myAside .aside__button:hover, body .cart .cart__button:hover, body .products .products__button:hover {
+body .myAside .myAside__button:hover, body .cart .cart__button:hover, body .products .products__button:hover {
   background-color: #e70b67;
   transform: scale(1.05);
 }
@@ -177,7 +177,7 @@ body .myAside {
 body .myAside.showAside {
   left: 0;
 }
-body .myAside .aside__name {
+body .myAside .myAside__name {
   width: 100%;
   padding: 5px 0px;
   color: #1f1f1f;
@@ -185,14 +185,14 @@ body .myAside .aside__name {
   font-weight: 600;
   box-sizing: border-box;
 }
-body .myAside .aside__closeIcon {
+body .myAside .myAside__closeIcon {
   width: 25px;
   cursor: pointer;
 }
-body .myAside .aside__closeIcon:hover {
+body .myAside .myAside__closeIcon:hover {
   transform: scale(1.5);
 }
-body .myAside .aside__item {
+body .myAside .myAside__item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -200,13 +200,13 @@ body .myAside .aside__item {
   padding: 20px;
   box-sizing: border-box;
 }
-body .myAside .aside__img {
+body .myAside .myAside__img {
   width: 60px;
 }
-body .myAside .aside__price {
+body .myAside .myAside__price {
   font-weight: 500;
 }
-body .myAside .aside__removeIcon {
+body .myAside .myAside__removeIcon {
   width: 25px;
   cursor: pointer;
 }

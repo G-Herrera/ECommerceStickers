@@ -1,64 +1,3 @@
-alert("Hello Java!");
-//Método para seleccionar objetos por ID
-const title = document.getElementById("txt");
-console.log(title);
-
-//Método para seleccionar objetos por clase
-const img = document.getElementsByClassName("header__logo");
-console.log(img);
-
-//Método para seleccionar etiquetas
-const tag = document.getElementsByTagName("article");
-console.log(tag);
-
-//Método para seleccionar basado en un selector css
-const elem = document.querySelector(".banner__text");
-console.log(elem);
-
-
-//Método para crear nuevos elementos
-const parent = document.querySelector(".products");
-const newElemento = document.createElement("section");
-newElemento.setAttribute("class","new");//con este podemos generar atributos en las etiquetas
-parent.append(newElemento);
-console.log(newElemento);
-
-//--------------------------------
-//Attributes
-const logo = document.querySelector(".header__logo");
-logo.setAttribute("src", "img/Astronauta.jpg"); //podemos tambien cambiar el valor de un atributo existente
-logo.setAttribute("src", "img/LogoEmpresa.png");
-console.log(logo.getAttribute("src"));//con getAttribute podemos conocer el valor que tiene
-console.log(logo.hasAttribute("src"));//true si contiene el atributo
-//logo.removeAttribute();//Sirve para eliminat atributos en las etiquetas
-
-//CSS Classes
-const parent2 = document.querySelector(".products");
-const parent3 = parent2.firstElementChild;//Selecciona el primer hijo del selector
-const price = parent3.lastElementChild;
-console.log(price);
-
-price.classList.add("red");
-price.classList.replace("red","blue");
-price.classList.remove("blue");
-
-//Modificar Texto
-const titleTxt =  document.getElementById("titleTxt");
-console.log(titleTxt.innerText);
-
-titleTxt.innerText = "PRUEBA";
-
-//Modificar Style
-titleTxt.style.backgroundColor = "gray";
-
-//EVENTOS
-//SINTAXIS: target.addEventListener('evento', funcion);
-titleTxt.addEventListener('click', () =>{
-    alert("Haz hecho click!");
-});
-
-
-
 const header = document.querySelector("header");
 const cartIcon = header.lastElementChild;
 const cart = document.querySelector(".cart");
@@ -102,39 +41,45 @@ addProducts.forEach(buttonAdd => {
     `;
 
     
-    cartItems.appendChild(cartItem);
+    if (cartItems) {
+      cartItems.appendChild(cartItem);
 
-    badgeCount++;
-    cartBadge.textContent=badgeCount;
-    cartBadge.style.display="inline-block";
-  });
-
-
-  const cartItems = document.querySelector(".cart__items"); 
-});
-
-cartItems.addEventListener("click", (event) => {
-        if (event.target.closest(".remove")) {
-            const itemToRemove = event.target.closest(".cart__item");
-            itemToRemove.remove();
-        }
-        if (badgeCount > 0){
-        badgeCount -- ;
+      badgeCount++;
+      if (cartBadge) {
         cartBadge.textContent = badgeCount;
-        if (badgeCount === 0){
-            cartBadge.style.display = "none";
-        }
-        }
-    });
-
-const iconRemove = document.querySelectorAll(".remove");
-console.log(iconRemove);
-
-iconRemove.forEach(elem =>{
-    elem.addEventListener("click", () =>{
-        const elemParent = elem.parentElement;
-        elemParent.remove();
-    })
+        cartBadge.style.display = "inline-block";
+      }
+    }
+  });
 });
 
+document.addEventListener("click", (e) => {
+  const removeBtn = e.target.closest(".remove");
+  if (!removeBtn) return;
+
+  
+  const cartItem = removeBtn.closest(".cart__item");
+  if (cartItem) {
+    cartItem.remove();
+
+    // actualizar badge (asumiendo badgeCount y cartBadge están en scope)
+    if (typeof badgeCount !== "undefined" && badgeCount > 0) {
+      badgeCount--;
+      if (cartBadge) {
+        cartBadge.textContent = badgeCount;
+        if (badgeCount === 0) cartBadge.style.display = "none";
+      }
+    }
+    return; 
+  }
+
+  
+  const asideItem = removeBtn.closest(".myAside__item");
+  if (asideItem) {
+    asideItem.remove();
+    // no tocamos el badge si el aside no está ligado al contador
+    return;
+  }
+
+});
 

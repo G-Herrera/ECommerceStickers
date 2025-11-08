@@ -177,45 +177,45 @@ body {
             left: 0;            
         }
 
-        & .aside__name{
+        & .myAside__name{
             @include generalspace(100%, 5px, 0px, $mainColor);
             text-align: left;
             font-weight: 600;
             box-sizing: border-box;   
         }
 
-        & .aside__closeIcon{
+        & .myAside__closeIcon{
             width: 25px;
             cursor: pointer;
         }
 
-        & .aside__closeIcon:hover{
+        & .myAside__closeIcon:hover{
                 transform: scale(1.5);
             }
 
-        & .aside__item{
+        & .myAside__item{
             @include flexbox();
             border-bottom: 1 solid #f76ea6;
             padding: 20px;
             box-sizing: border-box;
         }
 
-        & .aside__img{
+        & .myAside__img{
             width: 60px;
         }
 
-        & .aside__price{
+        & .myAside__price{
             font-weight: 500;
         }
 
-        & .aside__removeIcon{
+        & .myAside__removeIcon{
             width: 25px;
             cursor: pointer;
         }
-        & .aside__button{
+        & .myAside__button{
             @extend %generalButton;
         }
-        & .aside__button:hover{
+        & .myAside__button:hover{
             @extend %generalButtonHover;
         }
     }
