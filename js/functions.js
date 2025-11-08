@@ -36,7 +36,7 @@ addProducts.forEach(buttonAdd => {
         <p class="cart__title">${name}</p>
         <p class="cart__price">${price}</p>
         <i class="remove">
-            <img class="cart__icon" src="img/Icono quitar.png" alt="Icono quitar">
+            <img class="cart__icon" src="img/IconoQuitar.png" alt="Icono quitar">
         </i>
     `;
 
